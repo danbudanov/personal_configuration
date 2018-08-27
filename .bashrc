@@ -172,7 +172,8 @@ export LESS="--RAW-CONTROL-CHARS"
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 # source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-source /usr/bin/virtualenvwrapper.sh
+# source /usr/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # pip bash completion start
 _pip_completion()
