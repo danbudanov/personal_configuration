@@ -129,10 +129,11 @@ alias python3='ipython3'
 alias py3='ipython3'
 
 alias pwd='pwd -P'
+alias p='pwd'
 alias cdd='cd'
 alias cd='cd -P'
 
-
+alias image='feh'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -170,7 +171,9 @@ export LESS="--RAW-CONTROL-CHARS"
 
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+# source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+# source /usr/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # pip bash completion start
 _pip_completion()

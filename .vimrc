@@ -49,9 +49,18 @@ Plugin 'elzr/vim-json'
 
 Plugin 'severin-lemaignan/vim-minimap'
 
-" All of your Plugins must be added before the following line
+" Maximizer; press <F3> to maximize vim window
+Plugin 'szw/vim-maximizer'
+
+" Nice colorscheme library
+Plugin 'flazz/vim-colorschemes'
+
+" All of your Plugins must be added before the followingo line
+
 call vundle#end()            " required
+
 filetype plugin indent on    " required
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -93,6 +102,7 @@ colorscheme industry
 set softtabstop=0 expandtab shiftwidth=4 smarttab
 set mouse=a
 " set syntax on
+syntax on
 
 " pressing SHIFT+TAB inserts ahard tab
 inoremap <S-Tab> <C-V><Tab>
