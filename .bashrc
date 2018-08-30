@@ -161,7 +161,7 @@ if ! shopt -oq posix; then
 fi
 
 # On startup, enable vim keybindings for bash
-set -o vi
+# set -o vi
 
 # Colorize PS1
 PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$ '
@@ -171,6 +171,9 @@ export LESS="--RAW-CONTROL-CHARS"
 
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
+
+export WORKON_HOME=~/.virtualenvs
+
 # source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 # source /usr/bin/virtualenvwrapper.sh
 source $HOME/.local/bin/virtualenvwrapper.sh
@@ -184,4 +187,3 @@ _pip_completion()
 }
 
 complete -o default -F _pip_completion pip
-
