@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo openconnect anyc.vpn.gatech.edu --user=dbudanov3 --authgroup=gatech-2fa-Duo

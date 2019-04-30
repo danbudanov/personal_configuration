@@ -1,3 +1,0 @@
-#/usr/bin/env bash
-
-wine ~/.wine/drive_c/MC11demo/mc11demo.exe

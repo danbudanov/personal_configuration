@@ -1,0 +1,4 @@
+#!/bin/bash
+# $PATH=$PATH:./ ./FastX
+$PATH=$PATH:/opt/FastX
+FastX

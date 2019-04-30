@@ -125,8 +125,8 @@ alias pdf='evince'
 alias syslog='tail -f /var/sys/syslog'
 
 alias ipy='ipython'
-alias python3='ipython3'
-alias py3='ipython3'
+# alias python3='ipython3'
+# alias py3='ipython3'
 
 alias pwd='pwd -P'
 alias p='pwd'
@@ -134,6 +134,7 @@ alias cdd='cd'
 alias cd='cd -P'
 
 alias image='feh'
+alias svim='vim -u ~/.SpaceVim/vimrc'
 
 
 # Add an "alert" alias for long running commands.  Use like so:

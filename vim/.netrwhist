@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/danbudanov/Documents/FIRST'
-let g:netrw_dirhist_2='/home/danbudanov/Documents'
-let g:netrw_dirhist_3='/home/danbudanov/Documents/Github'
-let g:netrw_dirhist_4='/home/danbudanov/Documents/Github/FIRST-CameraControl'
-let g:netrw_dirhist_5='/home/danbudanov/Documents/Github/FIRST-CameraControl/test'

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# vim \
+#     -c "hardcopy > $1.ps" \ 
+#     -c quit "$1" && ps2pdf "$1.ps"
+# rm $1.ps
+#
+vim \
+    -c "hardcopy > $1.ps" -c quit "$1" && ps2pdf "$1.ps"
+rm $1.ps
