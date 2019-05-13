@@ -55,6 +55,9 @@ Plugin 'szw/vim-maximizer'
 " Nice colorscheme library
 Plugin 'flazz/vim-colorschemes'
 
+" Systemverilog syntax 
+Plugin 'vhda/verilog_systemverilog.vim'
+
 " All of your Plugins must be added before the followingo line
 
 call vundle#end()            " required

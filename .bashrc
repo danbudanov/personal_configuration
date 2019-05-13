@@ -135,6 +135,7 @@ alias cd='cd -P'
 
 alias image='feh'
 alias svim='vim -u ~/.SpaceVim/vimrc'
+alias untarxz="tar -xvf"
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -175,9 +176,9 @@ export LESSOPEN='|~/.lessfilter %s'
 
 export WORKON_HOME=~/.virtualenvs
 
-# source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 # source /usr/bin/virtualenvwrapper.sh
-source $HOME/.local/bin/virtualenvwrapper.sh
+# source $HOME/.local/bin/virtualenvwrapper.sh
 
 # pip bash completion start
 _pip_completion()
@@ -188,3 +189,5 @@ _pip_completion()
 }
 
 complete -o default -F _pip_completion pip
+
+export QSYS_ROOTDIR="/home/danbudanov/intelFPGA_lite/18.1/quartus/sopc_builder/bin"
