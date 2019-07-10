@@ -31,7 +31,7 @@ Plugin 'tomtom/tcomment_vim'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'kannokanno/previm'
 
@@ -57,6 +57,9 @@ Plugin 'flazz/vim-colorschemes'
 
 " Systemverilog syntax 
 Plugin 'vhda/verilog_systemverilog.vim'
+
+" Lightweight autocompleter
+Plugin 'prabirshrestha/asyncomplete.vim'
 
 " All of your Plugins must be added before the followingo line
 
@@ -96,13 +99,16 @@ let g:pyindent_continue = 'shiftwidth()'
 "================================================================================
 set number
 " size of a hard tabstop
+" set tabstop=4
 set tabstop=4
 filetype indent on
 colorscheme badwolf
 " colorscheme industry
+" colorscheme Atelier_DuneLight
 " expandtab - spaces instead of tab characters
 "shiftwidth - size of an indent
-set softtabstop=0 expandtab shiftwidth=4 smarttab
+set softtabstop=0 expandtab smarttab
+set shiftwidth=4
 set mouse=a
 " set syntax on
 syntax on
@@ -118,8 +124,24 @@ set colorcolumn=80
 set conceallevel=0
 
 set cursorline
+set cursorcolumn
+
+" see `:help :highlight`
+:highlight CursorColumn ctermfg=White ctermbg=DarkBlue cterm=bold guifg=white guibg=yellow gui=bold
+
+" autocmd InsertEnter * highlight CursorColumn ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
+" autocmd InsertLeave * highlight CursorColumn ctermfg=Black ctermbg=Yellow cterm=bold guifg=Black guibg=yellow gui=NONE
 
 autocmd FileType python setlocal ts=8 sw=4 sts=4 et
+" autocmd FileType verilog setlocal shiftwidth=2 tabstop=2
+" autocmd BufRead,BufNewFile *.v, *.sv set shiftwidth=2 tabstop=2
+" usual:
+autocmd BufRead,BufNewFile *.sv set shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile *.v set shiftwidth=2 tabstop=2
+
+" iDirect style:
+autocmd BufRead,BufNewFile *.sv set shiftwidth=3 tabstop=3
+autocmd BufRead,BufNewFile *.v set shiftwidth=3 tabstop=3
 "================================================================================
 nnoremap <S-F11> <ESC>:set hls! hls?<cr>
 inoremap <S-F11> <C-o>:set hls! hls?<cr>
@@ -130,3 +152,26 @@ nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\
 "================================================================================
 
 set printoptions=header:0,number:y
+"================================================================================
+function! HighlightRepeats() range
+  let lineCounts = {}
+  let lineNum = a:firstline
+  while lineNum <= a:lastline
+    let lineText = getline(lineNum)
+    if lineText != ""
+      let lineCounts[lineText] = (has_key(lineCounts, lineText) ? lineCounts[lineText] : 0) + 1
+    endif
+    let lineNum = lineNum + 1
+  endwhile
+  exe 'syn clear Repeat'
+  for lineText in keys(lineCounts)
+    if lineCounts[lineText] >= 2
+      exe 'syn match Repeat "^' . escape(lineText, '".\^$*[]') . '$"'
+    endif
+  endfor
+endfunction
+
+command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
+"
+" nnoremap <C-S-r> <ESC>:call HighlightRepeats()<cr>
+" vnoremap <C-S-r> <ESC>:call HighlightRepeats()<cr>

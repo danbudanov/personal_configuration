@@ -93,6 +93,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias ggrep='grep -ri -n'
+alias rgrep='grep -rn'
 alias cgrep='clear; ggrep'
 alias g='ggrep'
 
@@ -105,7 +106,8 @@ alias cdd='cd'
 alias cl='clear'
 alias cim='vim'
 
-alias f='nautilus . &'
+# alias f='nautilus . &'
+alias f='explorer .'
 alias vi='vim'
 alias v='vim'
 
@@ -136,6 +138,9 @@ alias cd='cd -P'
 alias image='feh'
 alias svim='vim -u ~/.SpaceVim/vimrc'
 alias untarxz="tar -xvf"
+
+alias lterm="xlaunch -run $HOME/config_terminator.xlaunch"
+alias mod="modelsim"
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -174,9 +179,9 @@ export LESS="--RAW-CONTROL-CHARS"
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
-export WORKON_HOME=~/.virtualenvs
+#export WORKON_HOME=~/.virtualenvs
 
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+#source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 # source /usr/bin/virtualenvwrapper.sh
 # source $HOME/.local/bin/virtualenvwrapper.sh
 
@@ -191,3 +196,5 @@ _pip_completion()
 complete -o default -F _pip_completion pip
 
 export QSYS_ROOTDIR="/home/danbudanov/intelFPGA_lite/18.1/quartus/sopc_builder/bin"
+
+export PATH="$HOME/bin:$PATH"
